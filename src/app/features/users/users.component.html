@@ -1,0 +1,22 @@
+<div class="users">
+  <div class="user-block">
+    <h2 class="user-title">Users</h2>
+    <button
+      [disabled]="isAddUserDisabled$ | async"
+      class="button"
+      (click)="openUserModal()"
+    >
+      Add User
+    </button>
+  </div>
+
+  <app-users-table
+    [users]="users$ | async"
+    (toggleUserActive)="toggleUserActive($event)"
+  ></app-users-table>
+</div>
+
+<app-user-modal
+  *ngIf="isUserModalOpen$ | async"
+  (close)="closeUserModal()"
+></app-user-modal>

@@ -1,0 +1,16 @@
+.users {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.user-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .user-title {
+    margin: 0;
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,23 @@
+<table class="user-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; trackBy: trackByFn">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>
+        <div class="toggle-button">
+          <app-toggle-button
+            [isActive]="user.active"
+            (toggle)="onToggleUserActive($event, user.id)"
+          ></app-toggle-button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./styles/colors";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto;
+  font-size: 14px;
+  color: $default-text-color;
+}
+
+.button {
+  background-color: $button-bg-color;
+  border: 1px solid $button-border-color;
+  color: $button-text-color;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &:hover:enabled {
+    background-color: $button-hover-bg-color;
+    border-color: $button-hover-border-color;
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: default;
+    color: $disabled-color;
+  }
+}
