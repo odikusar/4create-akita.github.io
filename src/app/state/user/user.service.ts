@@ -27,6 +27,14 @@ export class UserService {
   isNameUnique(name: string): Observable<boolean> {
     return this.userQuery
       .selectAll()
-      .pipe(map((users) => !users.find((user) => user.name === name)));
+      .pipe(
+        map(
+          (users) =>
+            !users.find(
+              (user) =>
+                user.name.trim().toLowerCase() === name.trim().toLowerCase()
+            )
+        )
+      );
   }
 }

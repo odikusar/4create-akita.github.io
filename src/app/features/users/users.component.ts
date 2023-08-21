@@ -14,6 +14,7 @@ import { UserToggleData } from './components/users-table/users-table.component';
 export class UsersComponent {
   readonly fullTableCount: number = 5;
   users$: Observable<User[]> = this.userQuery.selectAll();
+  isUserModalOpen$ = new BehaviorSubject<boolean>(false);
   isAddUserDisabled$: Observable<boolean> = combineLatest([
     this.users$.pipe(map((users) => users.every((user) => user.active))),
     this.userQuery.selectCount(),
@@ -23,7 +24,6 @@ export class UsersComponent {
         !isAllUsersActive || userCount >= this.fullTableCount
     )
   );
-  isUserModalOpen$ = new BehaviorSubject<boolean>(false);
 
   constructor(private userQuery: UserQuery, private userService: UserService) {}
 

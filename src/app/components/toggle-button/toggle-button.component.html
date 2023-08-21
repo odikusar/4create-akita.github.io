@@ -1,4 +1,8 @@
 <label class="toggle-button">
-  <input type="checkbox" [checked]="isActive" (change)="onToggle()" />
+  <input
+    type="checkbox"
+    [checked]="isActive"
+    (change)="toggle.emit(!isActive)"
+  />
   <span class="slider"></span>
 </label>

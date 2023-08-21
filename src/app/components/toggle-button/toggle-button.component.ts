@@ -17,9 +17,4 @@ import {
 export class ToggleButtonComponent {
   @Input() isActive: boolean = false;
   @Output() toggle: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-  onToggle() {
-    this.isActive = !this.isActive;
-    this.toggle.emit(this.isActive);
-  }
 }

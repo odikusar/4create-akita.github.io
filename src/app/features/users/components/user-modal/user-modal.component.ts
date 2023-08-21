@@ -15,7 +15,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { UserService } from 'src/app/state/user/user.service';
-import { UserValidator } from 'src/app/validators/user.validator';
+import { userNameUniqueValidator } from 'src/app/validators/user-name-unique.validator';
 
 interface UserForm {
   name: FormControl<string>;
@@ -36,7 +36,7 @@ export class UserModalComponent implements OnInit, OnDestroy {
     name: this.fb.control<string>(
       '',
       [Validators.required],
-      [this.userValidator.nameUnique()]
+      [userNameUniqueValidator(this.userService)]
     ),
     active: this.fb.control<boolean>(false),
   });
@@ -44,7 +44,6 @@ export class UserModalComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private userValidator: UserValidator,
     private cdr: ChangeDetectorRef
   ) {}
 

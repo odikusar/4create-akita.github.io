@@ -1,4 +1,4 @@
-# 4createAkita
+[Click here for the Live Demo](https://odikusar.github.io/4create-akita.github.io/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 

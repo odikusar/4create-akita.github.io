@@ -3,8 +3,8 @@ import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
 import { User } from './user.model';
 
 const initialUsers: User[] = [
-  { id: 1, name: '111', active: true },
-  { id: 2, name: '222', active: true },
+  { id: 1, name: 'Alex', active: true },
+  { id: 2, name: 'Peter', active: true },
 ];
 
 export interface UserState extends EntityState<User> {}

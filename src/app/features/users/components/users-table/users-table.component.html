@@ -9,7 +9,7 @@
   <tbody>
     <tr *ngFor="let user of users; trackBy: trackByFn">
       <td>{{ user.id }}</td>
-      <td>{{ user.name }}</td>
+      <td class="user-table__name">{{ user.name }}</td>
       <td>
         <div class="toggle-button">
           <app-toggle-button
